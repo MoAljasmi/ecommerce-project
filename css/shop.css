@@ -1,0 +1,7 @@
+nav a, nav span { margin-right: 12px; }
+form { display: flex; flex-direction: column; max-width: 360px; gap: 8px; margin: 20px; }
+.cart-item { display: flex; gap: 16px; align-items: center; margin: 10px 20px; }
+.cart-item input { width: 60px; }
+.product-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 16px; padding: 20px; }
+.product { border: 1px solid #ccc; border-radius: 8px; padding: 12px; }
+main, h2, h3, #detail, #order-number, #items { margin-left: 20px; }
