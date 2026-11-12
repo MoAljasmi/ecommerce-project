@@ -62,7 +62,6 @@ function addToCart(product) {
   if (existing) existing.quantity += 1;
   else cart.push({ product_id: product.product_id, name: product.name, price: Number(product.price), quantity: 1 });
   saveCart(cart);
-  alert("Product added to cart!");
 }
 
 function removeFromCart(productId) {
