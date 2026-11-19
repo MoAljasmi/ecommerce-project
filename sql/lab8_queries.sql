@@ -1,0 +1,39 @@
+/* Lab 8 - KPI queries */
+
+/* 1. Total revenue, number of orders, average order value */
+SELECT SUM(total) AS total_revenue, COUNT(*) AS number_of_orders, ROUND(AVG(total), 2) AS avg_order_value
+FROM "order"
+WHERE status != 'Cancelled';
+
+/* 2. Number of customers */
+SELECT COUNT(DISTINCT customer_id) AS number_of_customers
+FROM "order"
+WHERE status != 'Cancelled';
+
+/* 3. Top-selling products */
+SELECT p.name, SUM(oi.quantity) AS units_sold
+FROM order_item oi
+JOIN product p ON oi.product_id = p.product_id
+GROUP BY p.name
+ORDER BY units_sold DESC
+LIMIT 10;
+
+/* 4. Revenue by category */
+SELECT c.category_name, SUM(oi.quantity * oi.price) AS category_revenue
+FROM order_item oi
+JOIN product p ON oi.product_id = p.product_id
+JOIN category c ON p.category_id = c.category_id
+GROUP BY c.category_name
+ORDER BY category_revenue DESC;
+
+/* 5. Monthly sales trend */
+SELECT DATE_TRUNC('month', order_date) AS month, SUM(total) AS monthly_revenue
+FROM "order"
+WHERE status != 'Cancelled'
+GROUP BY month
+ORDER BY month;
+
+/* 6. Order status distribution */
+SELECT status, COUNT(*) AS orders
+FROM "order"
+GROUP BY status;

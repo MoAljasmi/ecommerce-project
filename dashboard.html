@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard - ShopNow</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/shop.css">
+  <link rel="stylesheet" href="css/dashboard.css">
+</head>
+<body>
+  <header class="site-header">
+    <h1 class="logo">ShopNow</h1>
+    <nav class="main-nav">
+      <a href="index.html">Home</a>
+      <a href="products.html">Products</a>
+      <a href="about.html">About</a>
+      <a href="cart.html">Cart</a>
+      <a href="dashboard.html">Dashboard</a>
+    </nav>
+  </header>
+
+  <h2>Management Dashboard</h2>
+
+  <div class="kpis">
+    <div class="kpi"><span>Total Revenue</span><strong id="kpi-revenue"></strong></div>
+    <div class="kpi"><span>Number of Orders</span><strong id="kpi-orders"></strong></div>
+    <div class="kpi"><span>Number of Customers</span><strong id="kpi-customers"></strong></div>
+    <div class="kpi"><span>Average Order Value</span><strong id="kpi-aov"></strong></div>
+  </div>
+
+  <div class="charts">
+    <div class="chart-box"><h3>Monthly Revenue Trend</h3><canvas id="chart-month"></canvas></div>
+    <div class="chart-box"><h3>Top Selling Products (units)</h3><canvas id="chart-top"></canvas></div>
+    <div class="chart-box"><h3>Revenue by Category</h3><canvas id="chart-category"></canvas></div>
+    <div class="chart-box"><h3>Order Status Distribution</h3><canvas id="chart-status"></canvas></div>
+  </div>
+
+  <h3>Orders</h3>
+  <label for="status-filter">Filter by status:</label>
+  <select id="status-filter"></select>
+  <table id="orders-table" class="orders">
+    <thead><tr><th>Date</th><th>Status</th><th>Total (AED)</th></tr></thead>
+    <tbody></tbody>
+  </table>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+  <script src="js/dashboard.js"></script>
+</body>
+</html>

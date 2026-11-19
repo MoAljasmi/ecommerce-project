@@ -1,0 +1,12 @@
+.kpis { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 16px; margin: 20px; }
+.kpi { background: #1f3a6b; color: #fff; border-radius: 8px; padding: 14px; text-align: center; }
+.kpi span { display: block; font-size: 14px; opacity: .85; }
+.kpi strong { font-size: 22px; }
+.charts { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; margin: 20px; }
+.chart-box { border: 1px solid #ccc; border-radius: 8px; padding: 12px; height: 320px; position: relative; }
+.chart-box h3 { margin: 0 0 8px 0; font-size: 16px; }
+.chart-box canvas { max-height: 260px; }
+.orders { border-collapse: collapse; margin: 10px 20px 30px; }
+.orders th, .orders td { border: 1px solid #ccc; padding: 6px 14px; text-align: left; }
+#status-filter { margin-left: 8px; }
+@media (max-width: 700px) { .charts { grid-template-columns: 1fr; } }
